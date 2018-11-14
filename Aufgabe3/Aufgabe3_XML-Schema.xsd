@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Veranstaltungen_Daten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Veranstaltungen_Ort">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Veranstaltungen_Ort_Standort">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="Veranstaltungen_Showacts">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Veranstaltungen_Showact_Kategorie">
+														<xs:complexType>
+															<xs:attribute name="Kategorie" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="Titel" type="xs:string" use="required" />
+												<xs:attribute name="Vorname" type="xs:string" use="required" />
+												<xs:attribute name="Name" type="xs:string" use="required" />
+												<xs:attribute name="Firma" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Standort" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Veranstaltungsort" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Veranstaltung" type="xs:string" use="required" />
+			<xs:attribute name="Startdatum" type="xs:date" use="required" />
+			<xs:attribute name="Enddatum" type="xs:date" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
